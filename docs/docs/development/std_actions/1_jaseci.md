@@ -1,110 +1,4 @@
 # Jaseci Basic Actions Library
-Alias provides names  for long string like UUIDs.
-
-- [Jaseci Basic Actions Library](#jaseci-basic-actions-library)
-  - [Alias](#alias)
-    - [Register](#register)
-    - [List](#list)
-    - [Delete](#delete)
-    - [Clear](#clear)
-  - [Objects](#objects)
-    - [Get global Variable](#get-global-variable)
-    - [Object Details](#object-details)
-    - [Object Access Mode](#object-access-mode)
-    - [Set Object access mode](#set-object-access-mode)
-    - [Object access grant](#object-access-grant)
-    - [Revoke object access](#revoke-object-access)
-  - [Graphs](#graphs)
-    - [Create Graph](#create-graph)
-    - [Get Graph Content](#get-graph-content)
-    - [List Graph Objects](#list-graph-objects)
-    - [Set Default Graph](#set-default-graph)
-    - [Remove Default Graph](#remove-default-graph)
-    - [Get Default Graph](#get-default-graph)
-    - [Delete Graph](#delete-graph)
-    - [Return Node Value](#return-node-value)
-    - [Set Node Value](#set-node-value)
-  - [Sentinels](#sentinels)
-    - [Register Sentinel](#register-sentinel)
-    - [Global Sentinel](#global-sentinel)
-    - [Get Sentinel](#get-sentinel)
-    - [Set Sentinel Code](#set-sentinel-code)
-    - [Sentinel List](#sentinel-list)
-    - [Sentinel Test](#sentinel-test)
-    - [Default Sentinel](#default-sentinel)
-    - [Remove Default Sentinel](#remove-default-sentinel)
-    - [Set Global Sentinel](#set-global-sentinel)
-    - [Return default Sentinel](#return-default-sentinel)
-    - [Delete Sentinel](#delete-sentinel)
-  - [Walker](#walker)
-    - [Run Walker](#run-walker)
-    - [Register Walker](#register-walker)
-    - [Get Walker](#get-walker)
-    - [Set Walker code](#set-walker-code)
-    - [List Walkers](#list-walkers)
-    - [Delete Walker](#delete-walker)
-    - [Spawn Walker](#spawn-walker)
-    - [Delete spawned Walker](#delete-spawned-walker)
-    - [List Spawned walker](#list-spawned-walker)
-    - [Assign walker to node](#assign-walker-to-node)
-    - [Execute Walker](#execute-walker)
-    - [Walker run](#walker-run)
-    - [Walker Individual APIs](#walker-individual-apis)
-  - [Architypes](#architypes)
-    - [Create Architype](#create-architype)
-    - [Get Architype](#get-architype)
-    - [Set Architype code or ir](#set-architype-code-or-ir)
-    - [List Architype](#list-architype)
-    - [Delete Architype](#delete-architype)
-  - [Masters](#masters)
-    - [Create Master](#create-master)
-    - [Get Master Content](#get-master-content)
-    - [List Masters](#list-masters)
-      - [Set Default Master](#set-default-master)
-    - [Unset Default Master](#unset-default-master)
-    - [Get Default Master](#get-default-master)
-    - [Get Master Object](#get-master-object)
-    - [Delete Master](#delete-master)
-  - [Logger](#logger)
-    - [Connect to internal logger](#connect-to-internal-logger)
-    - [Remove HTTP Handler](#remove-http-handler)
-    - [Check Active logger](#check-active-logger)
-  - [Global API](#global-api)
-    - [Set Global](#set-global)
-    - [Delete Global](#delete-global)
-    - [Set Global Sentinel](#set-global-sentinel-1)
-    - [Unset Global Sentinel](#unset-global-sentinel)
-  - [Super Master](#super-master)
-    - [Super Instance of Master](#super-instance-of-master)
-    - [Masters info](#masters-info)
-    - [Set Default Master](#set-default-master-1)
-    - [Unset  default Master](#unset--default-master)
-  - [Stripe](#stripe)
-    - [Create Product](#create-product)
-    - [Modify Product Price](#modify-product-price)
-    - [List Products](#list-products)
-    - [Create Customer](#create-customer)
-    - [Get Customer Information](#get-customer-information)
-    - [Add Customer Payment Method](#add-customer-payment-method)
-    - [Remove Customer Payment method](#remove-customer-payment-method)
-    - [Customer's List of payment Method](#customers-list-of-payment-method)
-    - [Update Customer default payment](#update-customer-default-payment)
-    - [Create Customer Subscription](#create-customer-subscription)
-    - [Cancel Customer Subscription](#cancel-customer-subscription)
-    - [Get Customer Subscription](#get-customer-subscription)
-    - [Invoice List](#invoice-list)
-  - [Load actions](#load-actions)
-  - [Load modules locally](#load-modules-locally)
-    - [Load modules remote](#load-modules-remote)
-    - [Load modules local](#load-modules-local)
-    - [List actions](#list-actions)
-  - [Configurations APIs](#configurations-apis)
-    - [Get config](#get-config)
-    - [Set Config](#set-config)
-    - [List Config](#list-config)
-    - [List Valid Config](#list-valid-config)
-    - [Configuration exits](#configuration-exits)
-    - [Delete Configurations](#delete-configurations)
 
 ## Alias
 Alias provides names  for long string like UUIDs.
@@ -628,7 +522,7 @@ Provide complete list of all master objects (list of root node objects)
 masters  = jaseci.master_list(detailed);
 ```
 
-#### Set Default Master
+### Set Default Master
 
 Sets the default sentinel  master should use.
 
@@ -897,9 +791,9 @@ Retrieve customer list of invoices.
 invoices = jaseci.stripe_invoice_list(customerId,subscriptionId,limit,lastitem);
 ```
 
-## Load actions
+## actions
 
-## Load modules locally
+## Load actions module locally
 
 Hot load a python module and assimlate any jaseci action
 `file` : `string` - module to be loaded
@@ -908,7 +802,7 @@ Hot load a python module and assimlate any jaseci action
 success_message  = jaseci.actions_load_local(file);
 ```
 
-### Load modules remote
+### Load actions module remote
 
 Hot load an actions set from live pod at URL
 `url` : `string` - link to module to be loaded
@@ -916,7 +810,7 @@ Hot load an actions set from live pod at URL
 ```jac
 success_message = jaseci.actions_load_remote(url);
 ```
-### Load modules local
+### Load actions module local
 
 `mod` : `string` - name of module to be loaded
 
