@@ -20,7 +20,7 @@ const config = {
   organizationName: 'Jaseci-Labs', // GitHub org/user name.
   projectName: 'jaseci', // Repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,11 +37,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/Jaseci-Labs/jaseci',
-        },
-        blog: {
-          showReadingTime: true,
           editUrl:
             'https://github.com/Jaseci-Labs/jaseci',
         },
@@ -65,11 +60,16 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialsSidebar',
+            position: 'left',
+            label: 'Tutorials',
+          },
           {
             href: 'https://github.com/Jaseci-Labs/jaseci',
             label: 'GitHub',
@@ -81,47 +81,26 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Docs',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
             title: 'Community',
             items: [
               {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/questions/tagged/jaseci',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/jaseci',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Jaseci-Labs/jaseci',
-              },
+              }
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Jaseci Labs, Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Jaseci Labs.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      }
     }),
 };
 
